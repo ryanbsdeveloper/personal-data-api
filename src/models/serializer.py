@@ -1,8 +1,8 @@
-from livro import ma
-from livro import BookModel
+from .model import ma
+from .model import DadosPessoaisModel
 
 
-class BookSchema(ma.SQLAlchemyAutoSchema):
+class DadosPessoaisSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
-        model = BookModel
+        model = DadosPessoaisModel
         load_instance = True

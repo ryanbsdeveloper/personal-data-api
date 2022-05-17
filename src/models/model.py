@@ -1,10 +1,12 @@
-import db
 from typing import List
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 
-class BookModel(db.Model):
-    __tablename__ = "livros"
+db = SQLAlchemy()
+ma = Marshmallow()
+
+class DadosPessoaisModel(db.Model):
+    __tablename__ = "Dados Pessoais"
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), nullable=False, unique=True)
@@ -21,15 +23,15 @@ class BookModel(db.Model):
         return {'title': self.title, 'pages': self.pages}
 
     @classmethod
-    def find_by_title(cls, title) -> "BookModel":
+    def find_by_title(cls, title) -> "DadosPessoaisModel":
         return cls.query.filter_by(title=title).first()
 
     @classmethod
-    def find_by_id(cls, _id) -> "BookModel":
+    def find_by_id(cls, _id) -> "DadosPessoaisModel":
         return cls.query.filter_by(id=_id).first()
 
     @classmethod
-    def find_all(cls) -> List["BookModel"]:
+    def find_all(cls) -> List["DadosPessoaisModel"]:
         return cls.query.all()
 
     def save_to_db(self) -> None:
@@ -40,6 +42,3 @@ class BookModel(db.Model):
         db.session.delete(self)
         db.session.commit()
 
-
-db = SQLAlchemy()
-ma = Marshmallow()
