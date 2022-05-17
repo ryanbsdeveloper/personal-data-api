@@ -1,17 +1,11 @@
-from flask import Flask
-from flask_restplus import Api, Resource
-from src.server.instancia import Server
+from flask_restplus import Resource
+from src.models.livro import BookModel
+from src.models.serializer import BookSchema
 
-app, api = Server.app, Server.api
 
-livros = [
-    {"id":0, "nome": "Harry Potter ea pedra filosofal"},
-    {"id":1, "nome": "Harry Potter câmara secreta"},
-    {"id":2, "nome": "Harry Potter eo prisioneiro de askaban"},
-    {"id":3, "nome": "Harry Potter Cálice de fogo"},
-]
+livros_serializer = BookSchema(many=True)
 
-api.route('/livros')
 class Livros(Resource):
     def get(self):
-        return(livros)
+        livros = BookModel.find_all()
+        return livros_serializer.dump(livros), 200
