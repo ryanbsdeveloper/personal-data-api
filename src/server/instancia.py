@@ -11,10 +11,10 @@ class Server():
         #                doc='/docs')
     
         self.bluePrint = Blueprint('api', __name__, url_prefix='/api')
-        self.api = Api(self.bluePrint, doc='/doc', title='Dados Pessoais de Pessoas Fictícias', version='0.1')
+        self.api = Api(self.bluePrint, title='Dados Pessoais de Pessoas Fictícias', version='0.1')
         self.app.register_blueprint(self.bluePrint)
 
-        self.app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres+psycopg2://ryanl:842684265@Ry@personal-api.postgres.database.azure.com/postgres?sslmode=require'
+        self.app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///sql3.db'
         self.app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
         self.app.config['PROPAGATE_EXCEPTIONS'] = True
         self.dados_ns = self.dados_ns()

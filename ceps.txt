@@ -1,0 +1,67 @@
+41321205
+Caminho 01
+(Cabula VII)
+Tancredo Neves	Salvador, BA	41205560
+Caminho 01
+Jaguaripe I	Salvador, BA	41342565
+Caminho 01
+(Moscou II)
+Vila Canária	Salvador, BA	41390270
+Caminho 01
+(S Antônio2ª Etapa)
+Jardim Nova Esperança	Salvador, BA	41370075
+Caminho 01
+(Jd N Esperança1ª Etapa)
+Jardim Nova Esperança	Salvador, BA	41370335
+Caminho 01
+(Moscou I)
+Vila Canária	Salvador, BA	41390595
+Caminho 01
+(Cj Eng A Franco)
+Valéria	Salvador, BA	41301010
+Caminho 01
+(Moscou II)
+Castelo Branco	Salvador, BA	41321841
+Caminho 01
+(Cj Jd Valéria I)
+Nova Brasília de Valéria	Salvador, BA	41307105
+Caminho 01
+(Cj Jd Valéria II)
+Nova Brasília de Valéria	Salvador, BA	41307275
+Caminho 01
+(Cj Lga Paixão)
+Nova Brasília de Valéria	Salvador, BA	41307375
+Caminho 01
+(Lot Alternativa)
+Castelo Branco	Salvador, BA	41320210
+Caminho 01
+(Lot P PesquisaV Melhor)
+Castelo Branco	Salvador, BA	41321240
+Caminho 01
+(5ª Etapa)
+Castelo Branco	Salvador, BA	41321830
+Caminho 01
+(Democrática)
+Castelo Branco	Salvador, BA	41321835
+Caminho 01
+Jardim Santo Inácio	Salvador, BA	41231085
+Caminho 01
+(Cj Jaguaripe II)
+Nova Brasília	Salvador, BA	41351400
+Caminho 01
+(Lot C Vida)
+Águas Claras	Salvador, BA	41311007
+Caminho 01
+(J Barro I)
+Águas Claras	Salvador, BA	41311038
+Rua 01
+(Condor)
+Águas Claras	Salvador, BA	41311268
+Caminho 01A
+Jardim Santo Inácio	Salvador, BA	41231067
+Caminho 01B
+Jaguaripe I	Salvador, BA	41342638
+Acesso 01D
+Jaguaripe I	Salvador, BA	41342794
+Caminho 01E
+Jaguaripe I	Salvador, BA	41342662

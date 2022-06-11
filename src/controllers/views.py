@@ -13,4 +13,4 @@ class DadosPessoais(Resource):
     @namespace.doc('Dados pessoais de pessoas fictícias')
     def get(self):
         dados = DadosPessoaisModel.find_all()
-        return DadosPessoaisSchema.dump(dados), 200
+        return dados_serializer.dump(dados), 200
