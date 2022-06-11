@@ -1,3 +1,3 @@
 # PROJETO EM ANDAMENTO
 
-Criando API com flask usando swagger
+Criando API usando swagger
