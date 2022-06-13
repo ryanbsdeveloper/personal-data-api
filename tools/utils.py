@@ -123,7 +123,7 @@ def tel():
     return f'+55 {choice(ddd)} 9{randint(0000, 9999)}-{randint(0000,9999)}'
 
 def email(nome:str, sobrenome:str):
-    nome, sobrenome = nome.lower(), sobrenome.lower()
+    nome, sobrenome = nome.lower().replace(' ',''), sobrenome.lower().replace(' ','')
     dominios = ['gmail', 'outlook', 'hotmail', 'yahoo',]
     alt = ['_', '-','.', 'dev', '&', '', '']
     fatia = ['nome', 'sobrenome', 'nenhum']
