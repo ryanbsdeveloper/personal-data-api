@@ -1,4 +1,3 @@
-from requests import session
 import sqlalchemy as sql
 import sqlalchemy.ext.declarative as declarative
 import sqlalchemy.orm as orm

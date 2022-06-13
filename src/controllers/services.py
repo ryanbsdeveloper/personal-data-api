@@ -1,6 +1,6 @@
-from . import database
-from . import models
-from . import schemas
+import database
+import models
+import schemas
 
 from sqlalchemy.orm import Session
 
@@ -14,13 +14,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
-def create_data(data: schemas.CreateDados, db: "Session") -> schemas.Dados:
-    data = models.DataPersonal(**data.dict())
-    db.add(data)
-    db.commit()
-    db.refresh(data)
-    return schemas.Dados.from_orm(data)
 
 def get_all_datas(db: "Session") -> schemas.Dados:
     datas = db.query(models.DataPersonal).all()

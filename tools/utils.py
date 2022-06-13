@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 
 
 def gerador(mascara=False):
@@ -40,7 +40,6 @@ def gerador(mascara=False):
         return cpf_mascara
 
     return cpf
-
 
 class CNPJ():
     def __init__(self) -> None:
@@ -84,7 +83,10 @@ class CNPJ():
 
         new_cnpj = self.novocnpj(inicio_cnpj)
         new_cnpj = self.novocnpj(new_cnpj)
-        if len(new_cnpj) < 14:
+        try:
+            if len(new_cnpj) < 14:
+                new_cnpj = new_cnpj + '0'
+        except:
             new_cnpj = new_cnpj + '0'
 
         if pontuação:
@@ -92,7 +94,6 @@ class CNPJ():
             return formatado
         else:
             return new_cnpj
-
 
 def data_nascimento():
     ano = randint(1950, 2003)
@@ -115,3 +116,26 @@ def data_nascimento():
         return f'0{dia}/{mes}/{ano}'
     else:
         return f'{dia}/{mes}/{ano}'
+
+def tel():
+    ddd = ['11', '73', '13', '21','11','12']
+    
+    return f'+55 {choice(ddd)} 9{randint(0000, 9999)}-{randint(0000,9999)}'
+
+def email(nome:str, sobrenome:str):
+    nome, sobrenome = nome.lower(), sobrenome.lower()
+    dominios = ['gmail', 'outlook', 'hotmail', 'yahoo',]
+    alt = ['_', '-','.', 'dev', '&', '', '']
+    fatia = ['nome', 'sobrenome', 'nenhum']
+    comorbr = ['com', 'com.br']
+
+    fatia_select = choice(fatia)
+    if fatia_select == 'nome':
+        nome = nome[:2]
+
+    elif fatia_select == 'sobrenome':
+        sobrenome = sobrenome[:4:]
+    
+    return f'{nome}{choice(alt)}{sobrenome}@{choice(dominios)}.{choice(comorbr)}'
+
+    
