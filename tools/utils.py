@@ -87,7 +87,7 @@ class CNPJ():
             if len(new_cnpj) < 14:
                 new_cnpj = new_cnpj + '0'
         except:
-            new_cnpj = new_cnpj + '0'
+            new_cnpj = str(new_cnpj) + '0'
 
         if pontuação:
             formatado = f'{new_cnpj[0:2]}.{new_cnpj[2:5]}.{new_cnpj[5:8]}/{new_cnpj[8:12]}-{new_cnpj[12:]}'

@@ -67,7 +67,7 @@ for i, nome in enumerate(ns):
     except:
         rua = 'n/a'
 
-    sleep(2)
+    sleep(1)
     sexo = 'Masculino'
     db.execute(f"""INSERT INTO "Dados" (nome, sobrenome, sexo, cpf, cnpj, uf, cidade, bairro, rua, nascimento, cep, telefone, email)
 VALUES ('{str(nome)}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{rua}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(nome, sb[i])}');""")
@@ -94,7 +94,7 @@ for i, nome in enumerate(mulher):
     except:
         rua = 'n/a'
 
-    sleep(2)
+    sleep(1)
     sexo = 'Feminino'
     db.execute(f"""INSERT INTO "Dados" (nome, sobrenome, sexo, cpf, cnpj, uf, cidade, bairro, rua, nascimento, cep, telefone, email)
 VALUES ('{str(nome)}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{str(rua)}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(nome, sb[i])}');""")
