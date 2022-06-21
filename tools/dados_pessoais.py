@@ -1,3 +1,4 @@
+from random import randint
 from secrets import choice
 from time import sleep
 import requests
@@ -38,8 +39,9 @@ with open('tools/sobrenomes.txt', 'r') as file:
             sb.append(str(linha).replace("\n", ""))
 
 
+
 for i, nome in enumerate(ns):
-    url = requests.get(f'https://viacep.com.br/ws/{ceps[i]}/json')
+    url = requests.get(f'https://viacep.com.br/ws/{ceps[randint(2, 239)]}/json')
     sleep(1)
     dados = url.json()
     try:
@@ -67,34 +69,40 @@ for i, nome in enumerate(ns):
     except:
         rua = 'n/a'
 
-    sleep(1)
     sexo = 'Masculino'
     db.execute(f"""INSERT INTO "Dados" (nome, sobrenome, sexo, cpf, cnpj, uf, cidade, bairro, rua, nascimento, cep, telefone, email)
-VALUES ('{str(nome)}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{rua}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(nome, sb[i])}');""")
-
-
-for i, nome in enumerate(mulher):
-    url = requests.get(f'https://viacep.com.br/ws/{ceps[i]}/json')
+VALUES ('{str(ns[i])}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{rua}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(ns[i], sb[i])}');""")
+    sleep(1)
+    url = requests.get(f'https://viacep.com.br/ws/{ceps[randint(1, 240)]}/json')
     sleep(1)
     dados = url.json()
     try:
         estado = dados['uf']
+        if not estado:
+            estado = 'n/a'
     except:
         estado = 'n/a'
     try:
         cidade = dados['localidade']
+        if not cidade:
+            cidade = 'n/a'
     except:
         cidade = 'n/a'
     try:
         bairro = dados['bairro']
+        if not bairro:
+            bairro = 'n/a'
     except:
         bairro = 'n/a'
     try:
         rua = dados['logradouro']
+        if not rua:
+            rua = 'n/a'
     except:
         rua = 'n/a'
 
-    sleep(1)
     sexo = 'Feminino'
     db.execute(f"""INSERT INTO "Dados" (nome, sobrenome, sexo, cpf, cnpj, uf, cidade, bairro, rua, nascimento, cep, telefone, email)
-VALUES ('{str(nome)}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{str(rua)}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(nome, sb[i])}');""")
+    VALUES ('{str(mulher[i])}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{str(rua)}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(mulher[i], sb[i])}');""")
+
+

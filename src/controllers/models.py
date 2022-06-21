@@ -1,6 +1,14 @@
 import sqlalchemy as sql
 from sqlalchemy.orm import relationship
 from . import database
+    
+
+class AuthUsers(database.Base):
+    __tablename__ = "auth"
+    id = sql.Column(sql.Integer, index=True, primary_key=True)
+    email = sql.Column(sql.String, index=True)
+    hash = sql.Column(sql.String, index=True)
+
 
 class DataPersonal(database.Base):
     __tablename__ = "Dados"
@@ -20,5 +28,3 @@ class DataPersonal(database.Base):
     cidade = sql.Column(sql.String, index=True)
     bairro = sql.Column(sql.String, index=True)
     rua = sql.Column(sql.String, index=True)
-
-    contato = relationship("Result", back_populates="grades")

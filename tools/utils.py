@@ -1,46 +1,5 @@
 from random import randint, choice
 
-
-def gerador(mascara=False):
-    entrada = randint(100000000, 999999999)
-    cpf = str(entrada)
-
-    soma = 0
-    for pos, c in enumerate(range(10, 1, -1)):
-        soma += int(cpf[pos]) * c
-
-    modulo1 = 11 - (soma % 11)
-
-    if modulo1 > 9:
-        cpf += '0'
-    else:
-        cpf += str(modulo1)
-
-    soma_2 = 0
-    for pos, c in enumerate(range(11, 1, -1)):
-        soma_2 += int(cpf[pos]) * c
-
-    modulo2 = 11 - (soma_2 % 11)
-
-    if modulo2 > 9:
-        cpf += '0'
-    else:
-        cpf += str(modulo2)
-
-    if mascara:
-        cpf_mascara = ''
-        for c in range(len(cpf)):
-            cpf_mascara += cpf[c]
-            if c == 2:
-                cpf_mascara += '.'
-            if c == 5:
-                cpf_mascara += '.'
-            if c == 8:
-                cpf_mascara += '-'
-        return cpf_mascara
-
-    return cpf
-
 class CNPJ():
     def __init__(self) -> None:
         self.regressivos = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2]
@@ -94,6 +53,47 @@ class CNPJ():
             return formatado
         else:
             return new_cnpj
+
+
+def gerador(mascara=False):
+    entrada = randint(100000000, 999999999)
+    cpf = str(entrada)
+
+    soma = 0
+    for pos, c in enumerate(range(10, 1, -1)):
+        soma += int(cpf[pos]) * c
+
+    modulo1 = 11 - (soma % 11)
+
+    if modulo1 > 9:
+        cpf += '0'
+    else:
+        cpf += str(modulo1)
+
+    soma_2 = 0
+    for pos, c in enumerate(range(11, 1, -1)):
+        soma_2 += int(cpf[pos]) * c
+
+    modulo2 = 11 - (soma_2 % 11)
+
+    if modulo2 > 9:
+        cpf += '0'
+    else:
+        cpf += str(modulo2)
+
+    if mascara:
+        cpf_mascara = ''
+        for c in range(len(cpf)):
+            cpf_mascara += cpf[c]
+            if c == 2:
+                cpf_mascara += '.'
+            if c == 5:
+                cpf_mascara += '.'
+            if c == 8:
+                cpf_mascara += '-'
+        return cpf_mascara
+
+    return cpf
 
 def data_nascimento():
     ano = randint(1950, 2003)
