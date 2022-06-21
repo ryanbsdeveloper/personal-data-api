@@ -1,14 +1,11 @@
-from enum import auto
-from pyexpat import model
-from attr import has
-from pydantic import EmailError, EmailStr
+from pydantic import EmailStr
 import hashlib
 from . import database
 from . import models
 from . import schemas
 
 from sqlalchemy.orm import Session
-from fastapi import HTTPException, Response
+from fastapi import HTTPException
 
 
 def add_table():

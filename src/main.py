@@ -28,6 +28,7 @@ app = fastapi.FastAPI(
         'email': 'ryanbsdeveloper@gmail.com'},
     openapi_tags=tags_metadata,
     docs_url='/',
+    swagger_ui_parameters={"defaultModelsExpandDepth": -1}
 
 )
 
@@ -35,10 +36,6 @@ app = fastapi.FastAPI(
 class Sexualidade(str, Enum):
     Masculino = 'Masculino'
     Feminino = 'Feminino'
-
-
-class ModelFiltro(str):
-    description = "An id representing an item"
 
 
 @app.get('/api/dados/', response_model=List[schemas.Dados], tags=["Pessoas"])
