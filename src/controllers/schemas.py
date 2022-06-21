@@ -2,7 +2,8 @@ from decimal import Decimal
 from typing import Optional
 import pydantic
 from datetime import date
-from pydantic import EmailStr, constr
+from pydantic import EmailStr
+from sqlalchemy import ForeignKey, Sequence
 
 class Contato(pydantic.BaseModel):
     email: EmailStr
@@ -10,25 +11,20 @@ class Contato(pydantic.BaseModel):
 
 class Cep(pydantic.BaseModel):
     cep: int
-    uf: constr(max_length=2, strip_whitespace=False)
+    uf: str
     cidade: str
     bairro: str
     rua: str
 
-class Principal(pydantic.BaseModel):
+class Dados(pydantic.BaseModel):
     nome: str
     sobrenome: str
-    nascimento: Optional[date]
+    nascimento: str
     sexo: str
     cpf: str
     cnpj: str
     contato: Contato
     codigo_postal: Cep
-    
-class Dados(pydantic.BaseModel):
-    id: int
-    dados: Principal
-    
+        
     class Config:
         orm_mode = True
-

@@ -1,5 +1,6 @@
 import sqlalchemy as sql
-import database
+from sqlalchemy.orm import relationship
+from . import database
 
 class DataPersonal(database.Base):
     __tablename__ = "Dados"
@@ -19,3 +20,5 @@ class DataPersonal(database.Base):
     cidade = sql.Column(sql.String, index=True)
     bairro = sql.Column(sql.String, index=True)
     rua = sql.Column(sql.String, index=True)
+
+    contato = relationship("Result", back_populates="grades")
