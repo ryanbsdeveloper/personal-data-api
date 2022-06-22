@@ -1,13 +1,11 @@
 from typing import Any, Dict, List, Union
 import fastapi
 import sqlalchemy.orm as orm
-from sqlalchemy.orm.base import PASSIVE_NO_FETCH_RELATED
 from enum import Enum
-from pydantic import BaseModel, EmailStr
-from fastapi import HTTPException
 
 
-from controllers import models, schemas
+
+from controllers import schemas
 from controllers import services
 
 tags_metadata = [
