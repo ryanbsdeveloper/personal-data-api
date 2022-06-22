@@ -1,12 +1,13 @@
 # **Principais tecnologias usadas:**
 
-###### ![tecs](C:\Users\ryanl\Downloads\tecs.png)
+###### ![tecs](https://user-images.githubusercontent.com/94659270/175064232-60a301f0-0558-4ecc-b453-96f579f8e1a5.png)
+
 
 ## API de dados pessoais 🧍‍♂️🧍‍♀️
 
 API documentada com **Swagger** e de fácil utilização, acesse agora: [clique aqui](https://api-dados-pessoais.herokuapp.com/)
 
-#### Sobre
+### Sobre
 
 O microsserviço retorna dados pessoais válidos de 200 pessoas, podendo fazer filtragem se desejável.
 
@@ -14,7 +15,7 @@ Para requisição dos dados da API, o usuário terá que criar um hash de autori
 
 *Codificação do hash: MD5*
 
-#### Desenvolvimento e Implantação 
+### Desenvolvimento e Implantação 
 
 ***Desenvolvimento*** 
 
@@ -30,7 +31,7 @@ microsserviço ,fiz o push do container da API para o Heroku já com o serviço 
 
 
 
-#### Tecnologias usadas 
+### Tecnologias usadas 
 
 - Python 3.9
 - Framework: FastApi
@@ -42,7 +43,7 @@ microsserviço ,fiz o push do container da API para o Heroku já com o serviço 
 
 
 
-#### Código-fonte
+### Código-fonte
 
 **dependências:**
 
@@ -52,7 +53,7 @@ microsserviço ,fiz o push do container da API para o Heroku já com o serviço 
 
 Escolha de sua preferencia, configure em src/controllers/database.py
 
-🚨***Script para criação de dados pessoais válidos não esta disponibilizado*** 🚨
+🚨***Script para criação de dados pessoais válidos não está disponibilizado*** 🚨
 
 
 
