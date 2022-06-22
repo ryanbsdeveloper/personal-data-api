@@ -6,7 +6,7 @@ import sqlalchemy.orm as orm
 #DATABASE_URL = f"postgresql://ryanl:password@db:5432/fastapi_database"
 
 # POSTGRES HEROKU
-DATABASE_URL = f"postgres://wtrsiuspjnorvg:707f69c0ec822ee5e4e5a2a84151d5adaee9672af69e357aac33cfe54cead93b@ec2-23-23-182-238.compute-1.amazonaws.com:5432/d9jr2mvsnnnsd1"
+DATABASE_URL = f""
 
 engine = sql.create_engine(DATABASE_URL)
 
