@@ -11,7 +11,6 @@ from fastapi import HTTPException
 def add_table():
     return database.Base.metadata.create_all(bind=database.engine)
 
-
 def get_db():
     db = database.session_local()
 
@@ -19,7 +18,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
 
 def get_all_datas(db: "Session", sexo, hash) -> schemas.Dados:
     auth = db.query(models.AuthUsers).filter(models.AuthUsers.hash == hash)
