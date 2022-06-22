@@ -36,7 +36,7 @@ class Sexualidade(str, Enum):
     Feminino = 'Feminino'
 
 
-@app.get('/api/dados/', response_model=List[schemas.Dados], tags=["Pessoas"])
+@app.get('/api/dados', response_model=List[schemas.Dados], tags=["Pessoas"])
 def consultar_dados_pessoais(db: orm.Session = fastapi.Depends(services.get_db),hash: str = fastapi.Query(description='**Informe seu HASH para autorização**', alias='Hash'),sexo: Sexualidade = fastapi.Query(None, alias='Sexualidade', description='Escolha entre **Masculino** e **Feminino**')):
     """
     **Dados de 200 pessoas.**

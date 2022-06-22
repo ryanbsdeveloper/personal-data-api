@@ -1,5 +1,5 @@
 import sqlalchemy as sql
-import database
+from . import database
     
 
 class AuthUsers(database.Base):
