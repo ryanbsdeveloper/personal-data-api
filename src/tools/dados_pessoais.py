@@ -13,8 +13,11 @@ ceps = ['04890570', '57036750', '13800435', '15612044', '13482440', '13065051', 
         '23580420', '13285892', '13150023', '05831055', '07031190', '13179288', '03921060', '23580420', '13425701', '15506714', '11330170', '08320250', '13212860', '01321020', '08391575', '23587545', '11615603', '15070330', '23555306', '12228350', '13423588', '03812200', '09840075', '13503210', '15990842', '04618010', '18190000', '13917208', '06266412', '06130030', '13060376', '17209070', '23580450', '04890570', '23555310', '41301010', '15612044', '41307105', '13065051', '18066418', '41321841', '02046090', '41321841', '13973017', '08620540', '04152040', '16201338', '13568771', '06402170', '12220480', '08111075', '03917080', '09260820', '16600035', '09330510', '13155040', '11724350', '15046230', '04851809', '41370075', '18708856', '06706070', '11259339', '13432512', '13042860', '15138328',
         '14070230', '13285892', '13150023', '41342638', '41342794', '13179288', '41342662', '13807697', '13425701']
 
+# POSTGRES DOCKER
+#DATABASE_URL = f"postgresql://ryanl:password@db:5432/fastapi_database"
 
-DATABASE_URL = f"postgresql://ryanl:password@db:5432/fastapi_database"
+# POSTGRES HEROKU
+DATABASE_URL = f"postgres://wtrsiuspjnorvg:707f69c0ec822ee5e4e5a2a84151d5adaee9672af69e357aac33cfe54cead93b@ec2-23-23-182-238.compute-1.amazonaws.com:5432/d9jr2mvsnnnsd1"
 
 db = create_engine(DATABASE_URL)
 
@@ -23,17 +26,17 @@ ns = []
 mulher = []
 
 
-with open("nomes_homens.txt", 'r') as file2:
+with open("src/tools/nomes_homens.txt", 'r') as file2:
     for linha in file2.readlines():
         if linha:
             ns.append(str(linha).replace("\n", ""))
 
-with open('nomes_mulheres.txt', 'r') as file2:
+with open('src/tools/nomes_mulheres.txt', 'r') as file2:
     for linha in file2.readlines():
         if linha:
             mulher.append(str(linha).replace("\n", ""))
 
-with open('sobrenomes.txt', 'r') as file:
+with open('src/tools/sobrenomes.txt', 'r') as file:
     for linha in file.readlines():
         if linha:
             sb.append(str(linha).replace("\n", ""))
