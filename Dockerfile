@@ -7,4 +7,5 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD uvicorn src.main:app --reload --host 0.0.0.0 --port $PORT
+# PARA DEPLOY HEROKU
+# CMD uvicorn src.main:app --reload --host 0.0.0.0 --port $PORT
