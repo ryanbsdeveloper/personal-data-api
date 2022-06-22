@@ -23,17 +23,17 @@ ns = []
 mulher = []
 
 
-with open("./src/tools/nomes_homens.txt", 'r') as file2:
+with open("nomes_homens.txt", 'r') as file2:
     for linha in file2.readlines():
         if linha:
             ns.append(str(linha).replace("\n", ""))
 
-with open('./src/tools/nomes_mulheres.txt', 'r') as file2:
+with open('nomes_mulheres.txt', 'r') as file2:
     for linha in file2.readlines():
         if linha:
             mulher.append(str(linha).replace("\n", ""))
 
-with open('./src/tools/sobrenomes.txt', 'r') as file:
+with open('sobrenomes.txt', 'r') as file:
     for linha in file.readlines():
         if linha:
             sb.append(str(linha).replace("\n", ""))
@@ -73,7 +73,7 @@ for i, nome in enumerate(ns):
     db.execute(f"""INSERT INTO "Dados" (nome, sobrenome, sexo, cpf, cnpj, uf, cidade, bairro, rua, nascimento, cep, telefone, email)
 VALUES ('{str(ns[i])}', '{str(sb[i]).replace("'", '`')}', '{(str(sexo))}', '{str(gerador(True))}', '{CNPJ().gera()}', '{estado}', '{cidade}', '{bairro.replace("'", "`")}', '{rua}','{data_nascimento()}', '{choice(ceps)}', '{tel()}', '{email(ns[i], sb[i])}');""")
     sleep(1)
-    url = requests.get(f'https://viacep.com.br/ws/{ceps[randint(1, 240)]}/json')
+    url = requests.get(f'https://viacep.com.br/ws/{ceps[randint(2, 239)]}/json')
     sleep(1)
     dados = url.json()
     try:
