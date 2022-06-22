@@ -5,8 +5,8 @@ from enum import Enum
 
 
 
-from controllers import schemas
-from controllers import services
+from .controllers import schemas
+from .controllers import services
 
 tags_metadata = [
     {

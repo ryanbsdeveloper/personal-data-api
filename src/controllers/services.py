@@ -1,8 +1,8 @@
 from pydantic import EmailStr
 import hashlib
-from . import database
-from . import models
-from . import schemas
+import database
+import models
+import schemas
 
 from sqlalchemy.orm import Session
 from fastapi import HTTPException

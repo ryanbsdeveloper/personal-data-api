@@ -1,12 +1,17 @@
 version: '3.8'
 services:
   web:
-    build: ./src
-    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    build: .
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
     ports:
       - "8000:8000"
-
+    depends_on:
+      - db
   db:
-    build: ./database
+    image: postgres:14-alpine
     ports:
       - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=ryanl
+      - POSTGRES_DB=fastapi_database

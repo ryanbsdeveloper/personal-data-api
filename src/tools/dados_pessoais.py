@@ -14,9 +14,7 @@ ceps = ['04890570', '57036750', '13800435', '15612044', '13482440', '13065051', 
         '14070230', '13285892', '13150023', '41342638', '41342794', '13179288', '41342662', '13807697', '13425701']
 
 
-db_host = 'db'
-
-DATABASE_URL = f"postgresql://ryanl:password@{db_host}:5432/fastapi_database"
+DATABASE_URL = f"postgresql://ryanl:password@db:5432/fastapi_database"
 
 db = create_engine(DATABASE_URL)
 
@@ -25,17 +23,17 @@ ns = []
 mulher = []
 
 
-with open("tools/nomes_homens.txt", 'r') as file2:
+with open("./src/tools/nomes_homens.txt", 'r') as file2:
     for linha in file2.readlines():
         if linha:
             ns.append(str(linha).replace("\n", ""))
 
-with open('tools/nomes_mulheres.txt', 'r') as file2:
+with open('./src/tools/nomes_mulheres.txt', 'r') as file2:
     for linha in file2.readlines():
         if linha:
             mulher.append(str(linha).replace("\n", ""))
 
-with open('tools/sobrenomes.txt', 'r') as file:
+with open('./src/tools/sobrenomes.txt', 'r') as file:
     for linha in file.readlines():
         if linha:
             sb.append(str(linha).replace("\n", ""))
