@@ -1,3 +1,5 @@
+### *Projeto pessoal*
+
 # **Principais tecnologias usadas:**
 
 ###### ![tecs](https://user-images.githubusercontent.com/94659270/175064232-60a301f0-0558-4ecc-b453-96f579f8e1a5.png)
@@ -54,7 +56,3 @@ microsserviço ,fiz o push do container da API para o Heroku já com o serviço 
 Escolha de sua preferencia, configure em src/controllers/database.py
 
 🚨***Script para criação de dados pessoais válidos não está disponibilizado*** 🚨
-
-
-
-### PROJETO PESSOAL
